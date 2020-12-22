@@ -1,6 +1,7 @@
 package koschei;
 
 import koschei.config.AppConfig;
+import koschei.composite.Koschei;
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.annotation.AnnotationConfigApplicationContext;
 
@@ -11,5 +12,6 @@ public class Application {
         KoscheiTheDeathless koscheiTheDeathless =
                 applicationContext.getBean(KoscheiTheDeathless.class);
         System.out.println(koscheiTheDeathless.getRulesByDeth());
+		System.out.println(applicationContext.getBean(Koschei.class));
     }
 }

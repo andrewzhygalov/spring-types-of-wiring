@@ -1,4 +1,5 @@
 import koschei.KoscheiTheDeathless;
+import koschei.composite.Koschei;
 import koschei.config.AppConfig;
 import org.junit.Assert;
 import org.junit.Test;
@@ -27,6 +28,11 @@ public class MainTest {
         if (!testText.contains(text) && testText.length() <= text.length()) {
             Assert.fail("Тест провален, не корректная связь бинов. Итоговая фраза не верна.");
         }
+		
+		Koschei koscheiComposite =  applicationContext.getBean(Koschei.class);
+		if(!testText.equals(koscheiComposite.toString())) {
+			Assert.fail("Composite text differs from main implementation");
+		}
     }
 
 }
